@@ -24,43 +24,45 @@ property colorIdx : Integer:=0
 
 property lang : Text:="fr"
 property letterCase : Text:="upper"
+property mode : Text:="letter"           // "letter" (B) or "syllable" (ba, che…)
 
-// each item: {emoji; en; fr} — every first letter is a plain A–Z in both languages
+// each item: {emoji; en; fr; enSyl; frSyl} — first letter is plain A–Z (letter mode);
+// enSyl/frSyl are the word's first reading syllable (syllable mode)
 property items : Collection:=[\
-{emoji: "🍌"; en: "banana"; fr: "banane"}; \
-{emoji: "⚽"; en: "ball"; fr: "ballon"}; \
-{emoji: "🐶"; en: "dog"; fr: "chien"}; \
-{emoji: "🐱"; en: "cat"; fr: "chat"}; \
-{emoji: "🍎"; en: "apple"; fr: "pomme"}; \
-{emoji: "🐟"; en: "fish"; fr: "poisson"}; \
-{emoji: "🚗"; en: "car"; fr: "voiture"}; \
-{emoji: "🌞"; en: "sun"; fr: "soleil"}; \
-{emoji: "🌙"; en: "moon"; fr: "lune"}; \
-{emoji: "🏠"; en: "house"; fr: "maison"}; \
-{emoji: "🦊"; en: "fox"; fr: "renard"}; \
-{emoji: "🐰"; en: "rabbit"; fr: "lapin"}; \
-{emoji: "🌸"; en: "flower"; fr: "fleur"}; \
-{emoji: "🐍"; en: "snake"; fr: "serpent"}; \
-{emoji: "🍇"; en: "grapes"; fr: "raisin"}; \
-{emoji: "🥕"; en: "carrot"; fr: "carotte"}; \
-{emoji: "🦁"; en: "lion"; fr: "lion"}; \
-{emoji: "🐸"; en: "frog"; fr: "grenouille"}; \
-{emoji: "🍋"; en: "lemon"; fr: "citron"}; \
-{emoji: "🐮"; en: "cow"; fr: "vache"}; \
-{emoji: "🐧"; en: "penguin"; fr: "pingouin"}; \
-{emoji: "🐴"; en: "horse"; fr: "cheval"}; \
-{emoji: "🔑"; en: "key"; fr: "clé"}; \
-{emoji: "📖"; en: "book"; fr: "livre"}; \
-{emoji: "🎩"; en: "hat"; fr: "chapeau"}; \
-{emoji: "🧀"; en: "cheese"; fr: "fromage"}; \
-{emoji: "🐭"; en: "mouse"; fr: "souris"}; \
-{emoji: "🐢"; en: "turtle"; fr: "tortue"}; \
-{emoji: "🎸"; en: "guitar"; fr: "guitare"}; \
-{emoji: "🍊"; en: "orange"; fr: "orange"}; \
-{emoji: "🐷"; en: "pig"; fr: "cochon"}; \
-{emoji: "🌵"; en: "cactus"; fr: "cactus"}; \
-{emoji: "🐝"; en: "bee"; fr: "abeille"}; \
-{emoji: "🍰"; en: "cake"; fr: "gâteau"}]
+{emoji: "🍌"; en: "banana"; fr: "banane"; enSyl: "ba"; frSyl: "ba"}; \
+{emoji: "⚽"; en: "ball"; fr: "ballon"; enSyl: "ball"; frSyl: "ba"}; \
+{emoji: "🐶"; en: "dog"; fr: "chien"; enSyl: "dog"; frSyl: "chien"}; \
+{emoji: "🐱"; en: "cat"; fr: "chat"; enSyl: "cat"; frSyl: "chat"}; \
+{emoji: "🍎"; en: "apple"; fr: "pomme"; enSyl: "ap"; frSyl: "pom"}; \
+{emoji: "🐟"; en: "fish"; fr: "poisson"; enSyl: "fish"; frSyl: "poi"}; \
+{emoji: "🚗"; en: "car"; fr: "voiture"; enSyl: "car"; frSyl: "voi"}; \
+{emoji: "🌞"; en: "sun"; fr: "soleil"; enSyl: "sun"; frSyl: "so"}; \
+{emoji: "🌙"; en: "moon"; fr: "lune"; enSyl: "moon"; frSyl: "lu"}; \
+{emoji: "🏠"; en: "house"; fr: "maison"; enSyl: "house"; frSyl: "mai"}; \
+{emoji: "🦊"; en: "fox"; fr: "renard"; enSyl: "fox"; frSyl: "re"}; \
+{emoji: "🐰"; en: "rabbit"; fr: "lapin"; enSyl: "rab"; frSyl: "la"}; \
+{emoji: "🌸"; en: "flower"; fr: "fleur"; enSyl: "flo"; frSyl: "fleur"}; \
+{emoji: "🐍"; en: "snake"; fr: "serpent"; enSyl: "snake"; frSyl: "ser"}; \
+{emoji: "🍇"; en: "grapes"; fr: "raisin"; enSyl: "gra"; frSyl: "rai"}; \
+{emoji: "🥕"; en: "carrot"; fr: "carotte"; enSyl: "car"; frSyl: "ca"}; \
+{emoji: "🦁"; en: "lion"; fr: "lion"; enSyl: "li"; frSyl: "li"}; \
+{emoji: "🐸"; en: "frog"; fr: "grenouille"; enSyl: "frog"; frSyl: "gre"}; \
+{emoji: "🍋"; en: "lemon"; fr: "citron"; enSyl: "le"; frSyl: "ci"}; \
+{emoji: "🐮"; en: "cow"; fr: "vache"; enSyl: "cow"; frSyl: "va"}; \
+{emoji: "🐧"; en: "penguin"; fr: "pingouin"; enSyl: "pen"; frSyl: "pin"}; \
+{emoji: "🐴"; en: "horse"; fr: "cheval"; enSyl: "horse"; frSyl: "che"}; \
+{emoji: "🔑"; en: "key"; fr: "clé"; enSyl: "key"; frSyl: "clé"}; \
+{emoji: "📖"; en: "book"; fr: "livre"; enSyl: "book"; frSyl: "li"}; \
+{emoji: "🎩"; en: "hat"; fr: "chapeau"; enSyl: "hat"; frSyl: "cha"}; \
+{emoji: "🧀"; en: "cheese"; fr: "fromage"; enSyl: "chee"; frSyl: "fro"}; \
+{emoji: "🐭"; en: "mouse"; fr: "souris"; enSyl: "mouse"; frSyl: "sou"}; \
+{emoji: "🐢"; en: "turtle"; fr: "tortue"; enSyl: "tur"; frSyl: "tor"}; \
+{emoji: "🎸"; en: "guitar"; fr: "guitare"; enSyl: "gui"; frSyl: "gui"}; \
+{emoji: "🍊"; en: "orange"; fr: "orange"; enSyl: "or"; frSyl: "o"}; \
+{emoji: "🐷"; en: "pig"; fr: "cochon"; enSyl: "pig"; frSyl: "co"}; \
+{emoji: "🌵"; en: "cactus"; fr: "cactus"; enSyl: "cac"; frSyl: "cac"}; \
+{emoji: "🐝"; en: "bee"; fr: "abeille"; enSyl: "bee"; frSyl: "a"}; \
+{emoji: "🍰"; en: "cake"; fr: "gâteau"; enSyl: "cake"; frSyl: "gâ"}]
 
 property letter : Text                   // the target letter, uppercase base A–Z
 property correctEmoji : Text
@@ -77,6 +79,19 @@ Class constructor($transition : cs.hero.ElementTransition)
 	OBJECT SET VISIBLE(*; "truth"; False)
 	This._highlightLang(1)     // Français
 	This._highlightCase(1)     // uppercase
+	This._highlightMode(1)     // Lettre
+	This.newQuestion()
+
+		// === === === === === === === === === === === === === === === === === === === ===
+		// Mode: 1 = Lettre (B) · 2 = Syllabe (ba, che…) — re-deals with the new key
+Function selectMode($i : Integer)
+
+	If ($i=1)
+		This.mode:="letter"
+	Else
+		This.mode:="syllable"
+	End if
+	This._highlightMode($i)
 	This.newQuestion()
 
 	// === === === === === === === === === === === === === === === === === === === ===
@@ -120,13 +135,13 @@ Function newQuestion()
 	var $ci : Integer:=(Random % This.items.length)
 	var $correct : Object:=This.items[$ci]
 	This.correctEmoji:=$correct.emoji
-	This.letter:=This._first($correct)
+	This.letter:=This._key($correct)
 
-	// three distractors whose name does NOT start with that letter
+	// three distractors whose key (letter or syllable) is different
 	var $idx : Collection:=[$ci]
 	While ($idx.length<4)
 		var $k : Integer:=(Random % This.items.length)
-		If (($idx.indexOf($k)=-1) & (This._first(This.items[$k])#This.letter))
+		If (($idx.indexOf($k)=-1) & (This._key(This.items[$k])#This.letter))
 			$idx.push($k)
 		End if
 	End while
@@ -194,10 +209,11 @@ Function _advance()
 Function _renderLetter()
 
 	var $L : Text:=This.letter
-	If (This.letterCase="lower")
+	If ((This.mode="letter") & (This.letterCase="lower"))
 		$L:=Lowercase($L)
 	End if
 	OBJECT SET TITLE(*; "letter"; $L)
+	OBJECT SET FONT SIZE(*; "letter"; This._letterFont($L))
 
 	If (This.lang="fr")
 		OBJECT SET TITLE(*; "prompt"; "Quelle image commence par…")
@@ -236,6 +252,35 @@ Function _word($item : Object) : Text
 Function _first($item : Object) : Text
 
 	return Uppercase(Substring(This._word($item); 1; 1))
+
+	// The target shown: a letter, or the word's first syllable.
+Function _key($item : Object) : Text
+
+	If (This.mode="syllable")
+		var $f : Text:="frSyl"
+		If (This.lang="en")
+			$f:="enSyl"
+		End if
+		return String($item[$f])
+	End if
+	return This._first($item)
+
+	// Shrink the big target so a multi-letter syllable fits.
+Function _letterFont($t : Text) : Integer
+
+	var $n : Integer:=Length($t)
+	Case of
+		: ($n<=1)
+			return 100
+		: ($n<=2)
+			return 84
+		: ($n<=3)
+			return 64
+		: ($n<=4)
+			return 50
+		Else
+			return 40
+	End case
 
 	// --------------------------------------------------------------------------------
 Function _byEmoji($e : Text) : Object
@@ -303,6 +348,10 @@ Function _highlightLang($sel : Integer)
 Function _highlightCase($sel : Integer)
 
 	This._seg("casePad_"; "caseLbl_"; 2; $sel)
+
+Function _highlightMode($sel : Integer)
+
+	This._seg("modePad_"; "modeLbl_"; 2; $sel)
 
 	// A tiny segmented-control painter shared by both selectors.
 Function _seg($pad : Text; $lbl : Text; $count : Integer; $sel : Integer)

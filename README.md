@@ -1,7 +1,7 @@
 # LetterDetective
 
 **"Which picture starts with this letter?" — a phonics game for kids.** A big letter appears;
-tap the picture whose name starts with it. Built on [Hero](https://github.com/mesopelagique/Hero)
+tap the picture whose name starts with it — or, in **Syllabe** mode, with a syllable (mo→🏍️, che→🐴). Bilingual 🇫🇷/🇬🇧. Built on [Hero](https://github.com/mesopelagique/Hero)
 (`cs.hero`) for the animations.
 
 <p align="center"><img src="Documentation/letterdetective.gif" width="360" alt="LetterDetective — a big letter A is shown above four pictures; tap the one that starts with A; the word is revealed and the next round slides in" /></p>

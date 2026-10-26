@@ -25,6 +25,8 @@ Case of
 				Form.game.selectLang(Num(Substring($name; 9)))
 			: (Position("caseBtn_"; $name)=1)
 				Form.game.selectCase(Num(Substring($name; 9)))
+			: (Position("modeBtn_"; $name)=1)
+				Form.game.selectMode(Num(Substring($name; 9)))
 			: ($name="btnSpeaker")
 				Form.game.toggleSound()
 		End case
